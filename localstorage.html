@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        // sessionStorage.setItem('javascript','we are storing in the browser application')
+        // const show = localStorage.getItem('javascript')
+        // document.write(`${show}`)
+
+        //JSON-> Javascript Object Notation
+
+        let student_details={
+            'first_name':'Ram',
+            'last_name': 'Thapa',
+            'subjects':['html','css','bootstrap','javascript','git','react']
+        }
+        // localStorage.setItem('students',student_details)
+        const obj_to_string = JSON.stringify(student_details)
+        localStorage.setItem('students', obj_to_string)
+
+        const data = localStorage.getItem('students')
+        console.log(data)
+        // console.log(data.first_name)
+
+        // to convert string to json object
+        const string_to_obj = JSON.parse(data)
+        console.log(string_to_obj)
+        console.log(string_to_obj.first_name)
+        console.log(string_to_obj.subjects[0])
+    </script>
+</body>
+</html>
